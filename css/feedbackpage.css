@@ -1,0 +1,61 @@
+:root{
+    --main-color:#0cadf8a6;
+}
+body{
+    background-image: url(../images/afaddcb9d7dfaaf5bff7ef04101935814665ac16.webp);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    
+}
+.container form {
+    position: relative;
+    top: 50px;
+    left: 25%;
+    /* padding-top: 30px; */
+    border-radius: 5px;
+}
+
+.container form .fa-space-awesome{
+color: #fff;
+/* background-color: #000; */
+width: 70px;
+height: 70px;
+border-radius: 50%;
+text-align: center;
+padding-top: 10px;
+position: absolute;
+top: -30px;
+left: 45%;
+}
+.container form input,
+.container form textarea{
+    border: 2px solid transparent;
+    transition: 0.3s;
+}
+.container form input:focus,
+.container form textarea:focus{
+    border: 2px solid var(--main-color);
+    outline: NONE;
+
+}
+.container form input:focus::placeholder,
+.container form textarea:focus::placeholder{
+    color: var(--main-color);
+    font-weight: bold;
+}
+.container form #submit{
+    background-color: var(--main-color);
+    color: #fff;
+    height: 35px;
+    width: 50%;
+    margin-left: 25%;
+    border-radius: 5px;
+font-weight: bold;
+transition: 0.3s ease-in-out;
+}
+.container form #submit:hover{
+    background-color: #fff;
+    color: var(--main-color);
+}

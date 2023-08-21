@@ -1,0 +1,822 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+:root {
+  --logo-color: #03a8f5;
+}
+body {
+  font-family: monospace;
+  /* height: 5000px; */
+}
+/* Start FeedBack */
+.feedback{
+  position: fixed;
+  bottom: 10px ;
+  left: 10px;
+  color: var(--logo-color);
+  text-decoration: none;
+  /* background-color: var(--logo-color); */
+  /* color: #fff; */
+  z-index: 5;
+  font-weight: bold;
+
+}
+.feedback .fa-comments{
+  color: var(--logo-color);
+}
+.feedback p{
+  /* display: inline; */
+  background-color: #03a8f5;
+  color: #fff;
+  padding: 5px;
+  border-radius: 5px;
+  transition: 0.3s;
+  width: 200px;
+position: absolute;
+top: -20px;
+left: 50px;
+}
+/* End FeedBack */
+/* Top Arrow Start  */
+.arr {
+  background-color: var(--logo-color);
+  color: #fff;
+  cursor: pointer;
+  /* display: none; */
+  transition: 0.5s;
+  right: -50px;
+  bottom: 0;
+  z-index: 999;
+}
+.arr:hover {
+  background-color: rgb(6, 99, 136);
+}
+/* Top Arrow End */
+/* Heading of all setions */
+.articles .container div span,
+.gallery .container div span,
+.features .container div span,
+.testomonial .container div span,
+.team .container div span,
+.services .container div span,
+.skills .container div span {
+  border: 2px solid #000;
+  position: relative;
+  transition: 0.8s ease-in-out;
+}
+.articles .container div span::before,
+.gallery .container div span::before,
+.features .container div span::before,
+.testomonial .container div span::before,
+.team .container div span::before,
+.services .container div span::before,
+.skills .container div span::before {
+  content: "";
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  background-color: var(--logo-color);
+  position: absolute;
+  left: -20%;
+  top: 50%;
+  transform: translate(-20%, -50%);
+  transition: 0.5s ease-in-out;
+}
+.articles .container div span::after,
+.gallery .container div span::after,
+.features .container div span::after,
+.testomonial .container div span::after,
+.team .container div span::after,
+.services .container div span::after,
+.skills .container div span::after {
+  content: "";
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  background-color: var(--logo-color);
+  position: absolute;
+  right: -20%;
+  transition: 0.5s ease-in-out;
+  transform: translate(20%, -50%);
+  top: 50%;
+}
+.articles .container div span:hover::after,
+.gallery .container div span:hover::after,
+.features .container div span:hover::after,
+.testomonial .container div span:hover::after,
+.team .container div span:hover::after,
+.services .container div span:hover::after,
+.skills .container div span:hover::after {
+  right: 13px;
+  width: 61%;
+  height: 100%;
+  border-radius: 0;
+  z-index: -1;
+}
+.articles .container div span:hover::before,
+.gallery .container div span:hover::before,
+.features .container div span:hover::before,
+.testomonial .container div span:hover::before,
+.team .container div span:hover::before,
+.services .container div span:hover::before,
+.skills .container div span:hover::before {
+  left: 13px;
+  width: 50%;
+  height: 100%;
+  border-radius: 0;
+  z-index: -1;
+}
+.articles .container div span:hover,
+.gallery .container div span:hover,
+.features .container div span:hover,
+.testomonial .container div span:hover,
+.team .container div span:hover,
+.services .container div span:hover,
+.skills .container div span:hover {
+  border: 2px solid transparent;
+  color: #fff;
+}
+
+/* End heading of all sectios */
+/* Header Start */
+.navbar {
+  box-shadow: 0 0 2px -1px #000;
+  transition: all 0.3s ease-in-out;
+  background-color: #fff;
+}
+.container {
+  margin-top: -8px;
+  margin-bottom: -8px;
+}
+.container .navbar-brand {
+  color: var(--logo-color);
+  font-weight: 700;
+}
+.container .navbar-brand:hover {
+  color: var(--logo-color);
+}
+.container .collapse .navbar-nav {
+  /* margin: 0; */
+  /* padding: 20px; */
+}
+/* header{
+    position: relative;
+} */
+.container .collapse .navbar-nav li {
+  overflow: hidden;
+
+  position: relative;
+  padding: 0 15px;
+  /* padding-bottom: 50px; */
+  text-transform: capitalize;
+  font-size: 18px;
+  color: #000;
+  transition: 0.3s;
+  font-weight: 600;
+  /* height: 100px; */
+}
+.container .collapse .navbar-nav li a {
+  color: #000;
+  transition: 0.3s ease-in-out;
+}
+.container .collapse .navbar-nav li::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 5px;
+  background-color: var(--logo-color);
+  left: -100%;
+  top: 0%;
+  transform: translate(-100%, 0%);
+  transition: 0.3s;
+}
+.container .collapse .navbar-nav li:hover a {
+  color: var(--logo-color);
+}
+.container .collapse .navbar-nav li:hover {
+  background-color: #00000010;
+}
+.container .collapse .navbar-nav li:hover::before {
+  left: 100%;
+}
+@media (max-width: 992px) {
+  .container .collapse .navbar-nav li:hover a {
+    color: var(--logo-color);
+  }
+  .container .collapse .navbar-nav li:hover {
+    background-color: transparent;
+  }
+  .container .collapse .navbar-nav li:hover::before {
+    left: -100%;
+  }
+}
+
+/* .container .collapse .navbar-nav li a {
+    text-transform: capitalize;
+    font-size: 18px;
+    color: #000;
+transition: 0.3s;
+font-weight: 600;
+}
+.container .collapse .navbar-nav li a::before{
+    content: "";
+    position: absolute;
+    width: 90%;
+    height: 5px;
+    background-color: var(--logo-color);
+    left: -50%;
+    top: 0px;
+    transform: translate(-50%,0);
+    transition: 0.3s;
+}
+.container .collapse .navbar-nav li a:hover::before  {
+    /* border-top: 3px solid var(--logo-color); */
+/* left: 50%;
+   
+} */
+/* Header End */
+/* Start Menu  */
+.menu{
+  /* border: 1px solid #000; */
+  width: 80%;
+  position: absolute;
+  top:-150%;
+  left: 10%;
+  z-index: 2;
+  background-color: #fff;
+  overflow: hidden;
+  transition: 0.5s ease-in-out;
+}
+.menu::before{
+  content: "";
+  background-color: var(--logo-color);
+  width: 100%;
+  height: 3px;
+  position: absolute;
+  bottom: 0;
+  left:-150% ;
+  animation-name: left;
+  animation-timing-function: ease-in-out;
+  animation-duration: 0.8s;
+  animation-iteration-count: infinite;
+  animation-direction:alternate;
+  
+}
+@keyframes left {
+  100%{
+    left: 0;
+  }
+  
+}
+.menu::after{
+  content: "";
+  background-color: var(--logo-color);
+  width: 100%;
+  height: 3px;
+  position: absolute;
+  bottom: 0;
+  right:-150% ;
+  animation-name: right;
+  animation-timing-function: ease-in-out;
+  animation-duration: 0.8s;
+  animation-iteration-count: infinite;
+  animation-direction:alternate;
+  animation-delay: 0.8s;
+}
+@keyframes right {
+  100%{
+    right: 0;
+  }
+  
+}
+.menu ul li{
+  border-bottom: 1px solid var(--logo-color);
+  transition: 0.3s ease-in-out;
+}
+.menu ul li a{
+  color: var(--logo-color);
+}
+.menu ul li:hover{
+  transform: translateX(10px);
+}
+/*End Menu  */
+/* Start Landing */
+/* Start animation on image */
+.landing .img-box img {
+  animation-name: Moving;
+  animation-timing-function: ease-in-out;
+  animation-duration: 0.8s;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+  position: relative;
+  z-index: 1;
+  transition: 0.5s;
+}
+
+@keyframes Moving {
+  100% {
+    transform: translateY(-20px);
+  }
+}
+.landing .img-box img:hover {
+  filter: brightness(0.5);
+  animation-play-state: paused;
+}
+.landing {
+  position: relative;
+  overflow: hidden;
+}
+/* End animation on image */
+/* Start Cutting on landing */
+.landing::before {
+  content: "";
+  width: 100%;
+  height: 90vh;
+  background-color: #fff;
+  position: absolute;
+  /* z-index: -1; */
+  /* bottom: -63%; */
+  top: 83%;
+  transform: skewY(-5deg);
+}
+@media (max-width: 992px) {
+  .landing .img-box img {
+    animation-play-state: paused;
+  }
+  .landing::after {
+    width: 0;
+    height: 0;
+  }
+}
+@media (max-width: 1200px) {
+  .landing::after {
+    width: 0;
+    height: 0;
+  }
+}
+/* End Cutting on landing */
+/* End Landing */
+/* Down Arrow Animation  Start*/
+.fa-angles-down {
+  animation-name: upanddown;
+  animation-timing-function: ease-in-out;
+  animation-duration: 0.8s;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+  transition: 0.3s;
+}
+@keyframes upanddown {
+  100% {
+    transform: translateY(-10px);
+  }
+}
+.fa-angles-down:hover {
+  animation-play-state: paused;
+  cursor: pointer;
+  color: var(--logo-color);
+}
+/* Down Arrow Animntion  End */
+/* Articles Section Start */
+
+.articles .cad {
+  transition: all 0.3s ease-in-out;
+}
+.articles .cad:hover {
+  transform: translateY(-10px);
+}
+.articles .cad:hover .fa-arrow-right {
+  animation-name: lefttoright;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+  animation-duration: 0.2s;
+  animation-direction: alternate;
+}
+.read-more a {
+  color: var(--logo-color);
+}
+.fa-arrow-right {
+  color: var(--logo-color);
+}
+@keyframes lefttoright {
+  100% {
+    transform: translateX(10px);
+  }
+}
+/* Articles Section End */
+/* Gallery Strat */
+.gallery {
+  background-color: #00000010;
+}
+.gallery .im {
+  overflow: hidden;
+  position: relative;
+}
+
+.gallery .im::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: -100%;
+  top: 0;
+  transform: translate(0, 0);
+  background-color: var(--logo-color);
+  opacity: 0.8;
+  transition: 0.5s;
+}
+.gallery .im:hover::after {
+  left: 0;
+}
+.gallery .im .t {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  color: #fff;
+  z-index: 1;
+  display: none;
+  transition: 0.8s;
+}
+.gallery .im:hover .t {
+  display: block;
+  transition: 0.3s;
+}
+.gallery .im .t a:hover {
+  background-color: #000;
+  color: #fff;
+}
+/* Gallery End */
+/* Testmoinol Start  */
+.testomonial .container .row img {
+  width: 73px;
+  position: absolute;
+  top: -27px;
+  right: 13px;
+  border: 5px solid #fff;
+}
+.testomonial .container .row .opnion:first-child {
+  width: 145px;
+}
+/* Testmoinol End */
+/* Team Strat */
+.team {
+  /* overflow: hidden; */
+}
+.team .c {
+  position: relative;
+  /* overflow: hidden; */
+}
+.team .c h2 {
+  color: var(--logo-color);
+}
+.team img {
+  /* position: absolute; */
+  width: 250px;
+  border-radius: 10px;
+  position: relative;
+  top: 45px;
+  right: 50px;
+  /* z-index: 8; */
+  transition: 0.3s ease-in-out;
+}
+.team .c::before {
+  content: "";
+  width: 0;
+  height: 100%;
+  background-color: #00000075;
+  position: absolute;
+  right: 0;
+  top: 0;
+  border-radius: 5px;
+  /* z-index: 5; */
+  transition: 0.3s ease-in-out;
+}
+.team .c:hover::before {
+  width: 100%; /* transition: 0.3s; */
+}
+.team .c:hover img {
+  filter: brightness(0.5);
+}
+.team .last {
+  margin-left: 120px;
+}
+@media (max-width: 992px) {
+  .team .last {
+    margin-left: 60px;
+  }
+}
+.team .social {
+  position: absolute;
+  right: 10px;
+  top: 20px;
+}
+.team .social i {
+  cursor: pointer;
+  color: #00000075;
+  transition: 0.3s;
+}
+.team .social i:nth-child(2):hover {
+  color: orangered;
+  animation-name: left-right;
+  animation-timing-function: ease-in-out;
+  animation-duration: 0.3s;
+  animation-iteration-count: infinite;
+  animation-direction: alternate-reverse;
+}
+.team .social i:first-child:hover,
+.team .social i:nth-child(3):hover,
+.team .social i:nth-child(4):hover {
+  color: blue;
+  animation-name: left-right;
+  animation-timing-function: ease-in-out;
+  animation-duration: 0.3s;
+  animation-iteration-count: infinite;
+  animation-direction: alternate-reverse;
+}
+.team .social i:last-child:hover {
+  color: red;
+  animation-name: left-right;
+  animation-timing-function: ease-in-out;
+  animation-duration: 0.3s;
+  animation-iteration-count: infinite;
+  animation-direction: alternate-reverse;
+}
+
+@keyframes left-right {
+  100% {
+    transform: translatey(-10px);
+  }
+}
+/* Team End */
+/* Services Start */
+.services {
+  background-color: #00000010;
+}
+.services .row h2 {
+  color: var(--logo-color);
+}
+.services .details {
+  /* background-color:#00000010; */
+  text-align: center;
+  background: linear-gradient(45deg, var(--logo-color) 50%, #fff 50%);
+}
+.services .container .row .srev {
+  border-top: 2px solid transparent;
+  transition: 0.3s;
+}
+.services .container .row .srev:hover {
+  border-top: 2px solid var(--logo-color);
+  transform: translateY(-20px);
+}
+
+/* Services End */
+/* Skills Start */
+.skills .container .html {
+  position: relative;
+}
+.skills .container .ranges span,
+.skills .container .ranges2 span,
+.skills .container .ranges3 span {
+  border: none;
+}
+.skills .container .ranges span:hover,
+.skills .container .ranges2 span:hover,
+.skills .container .ranges3 span:hover {
+  color: black;
+  background-color: transparent;
+  border: #000;
+}
+.skills .container .ranges span::after,
+.skills .container .ranges2 span::after,
+.skills .container .ranges3 span::after,
+.skills .container .ranges span::before,
+.skills .container .ranges2 span::before,
+.skills .container .ranges3 span::before {
+  display: none;
+}
+.skills .container .ranges #rate,
+.skills .container .ranges2 #rate,
+.skills .container .ranges3 #rate {
+  width: 500px;
+  display: block;
+  height: 30px;
+  background-color: #00000010;
+  position: relative;
+}
+@media (max-width: 992px) {
+  .skills .container .ranges #rate,
+  .skills .container .ranges2 #rate,
+  .skills .container .ranges3 #rate {
+    width: 400px;
+  }
+}
+.skills .container .ranges #rate::before,
+.skills .container .ranges2 #rate::before,
+.skills .container .ranges3 #rate::before {
+  content: "";
+  background-color: var(--logo-color);
+  height: 100%;
+  position: absolute;
+  display: block;
+  border-radius: 0;
+}
+.skills .container .ranges #rate::before {
+  width: 80%;
+  left: 80px;
+}
+.skills .container .ranges2 #rate::before {
+  width: 65%;
+  left: 69px;
+}
+.skills .container .ranges3 #rate::before {
+  width: 50%;
+  left: 53px;
+}
+@media (max-width: 992px) {
+  .skills .container .ranges #rate::before {
+    width: 80%;
+    left: 68px;
+  }
+  .skills .container .ranges2 #rate::before {
+    width: 70%;
+    left: 55px;
+  }
+  .skills .container .ranges3 #rate::before {
+    width: 50%;
+    left: 45px;
+  }
+}
+.skills .container .ranges #rate:hover::after,
+.skills .container .ranges2 #rate:hover::after,
+.skills .container .ranges3 #rate:hover::after {
+  background-color: var(--logo-color);
+}
+.skills .container .ranges #percent,
+.skills .container .ranges2 #percent,
+.skills .container .ranges3 #percent {
+  background-color: var(--logo-color);
+  color: #fff;
+  padding: 5px;
+  border-radius: 5px;
+  position: absolute;
+  top: 15px;
+
+  transform: translate(-15px, -72%);
+  /* width: 20px; */
+}
+.skills .container .ranges #percent {
+  left: 72%;
+}
+.skills .container .ranges2 #percent {
+  left: 60%;
+}
+.skills .container .ranges3 #percent {
+  left: 45%;
+}
+/* @media (max-width:992px) {
+  .skills .container .ranges #percent{
+    left: 85%;
+  }
+  .skills .container .ranges2 #percent{
+  left: 70%;
+  }
+  .skills .container .ranges3 #percent{
+    left: 55%;
+  }
+  
+} */
+.skills .container .ranges #percent::before,
+.skills .container .ranges2 #percent::before,
+.skills .container .ranges3 #percent::before {
+  content: "";
+  /* width: 8px; */
+  /* height: 12px; */
+  position: absolute;
+  bottom: -23px;
+  left: 17%;
+  /* background-color: turquoise; */
+  border: 12px solid;
+  border-color: var(--logo-color) transparent transparent transparent;
+}
+/* Skills End */
+/* stats Start */
+.stats {
+  background-color: #00000010;
+}
+/* .stats .container .row div{
+  width: 22%;
+} */
+.stats .container .row div p {
+  color: var(--logo-color);
+}
+.stats .container .row div {
+  position: relative;
+  overflow-y: hidden;
+  transition: 0.3s;
+  box-shadow: 0 0 7px -3px #0000006b;
+}
+.stats .container .row div::after {
+  content: "";
+  width: 2px;
+  height: 100%;
+  background-color: var(--logo-color);
+  position: absolute;
+  top: -500px;
+  left: 0;
+  transition: 0.3s ease-in-out;
+}
+.stats .container .row div::before {
+  content: "";
+  width: 2px;
+  height: 100%;
+  background-color: var(--logo-color);
+  position: absolute;
+  top: 500px;
+  right: 0;
+  transition: 0.3s ease-in-out;
+}
+.stats .container .row div:hover::after {
+  top: 0;
+}
+.stats .container .row div:hover::before {
+  top: 0;
+}
+.stats .container .row div:hover {
+  box-shadow: none;
+}
+/* stats End  */
+/* Footer Start */
+.footer .icon .fa-facebook-f {
+  /* background-color: var(--logo-color); */
+  cursor: pointer;
+  transition: 0.3s;
+}
+.footer .icon .fa-facebook-f:hover {
+  background-color: #03a8f5;
+}
+.footer .icon .fa-github {
+  cursor: pointer;
+  /* background-color: #00000010; */
+  transition: 0.3s;
+}
+.footer .icon .fa-github:hover {
+  background-color: rgb(112, 33, 4);
+}
+.footer .icon .fa-twitter:hover {
+  background-color: #03a8f5;
+}
+
+.footer .important-links li {
+  border-bottom: 2px solid #615d5d;
+  padding-bottom: 5px;
+  width: 180px;
+  transition: 0.3s;
+}
+.footer .important-links li a {
+  color: #615d5d;
+  transition: 0.3s ease-in-out;
+}
+.footer .important-links li:last-child {
+  border-bottom: none;
+}
+.footer .important-links li:hover {
+  border-bottom-color: #fff;
+  transform: translateX(10px);
+}
+.footer .important-links li:hover a {
+  color: #fff;
+}
+.footer .important-links li a .fa-angles-right {
+  color: var(--logo-color);
+}
+.footer .list-data li i {
+  color: var(--logo-color);
+}
+.footer .footerdown {
+  border-top: 1px solid #615d5d;
+}
+.footer .footerdown a {
+  color: var(--logo-color);
+  font-weight: bold;
+}
+.footer .footerdown {
+  /* position: relative; */
+  /* overflow: hidden; */
+}
+
+.footer .footerdown p a:hover{
+  animation-name: lightinig;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+  animation-duration: 0.8s;
+  animation-direction: alternate;
+  
+
+}
+@keyframes lightinig {
+100%{
+  color: #fff;
+}  
+}
+/* Footer End */
